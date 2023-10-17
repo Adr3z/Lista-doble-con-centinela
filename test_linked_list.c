@@ -340,7 +340,7 @@ static void test_sort_empty_list(void)
 
 static void test_sort_list_with_one_element(void)
 {
-   //TEST_IGNORE();
+   //TEST_IGNORE(); 28
    list_data_t expected[] = {1};
 
    list_push_back(&list, 1);
@@ -350,7 +350,7 @@ static void test_sort_list_with_one_element(void)
 
 static void test_sort_list_with_two_elements(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE(); 29
    list_data_t expected[] = {1, 2};
 
    list_push_back(&list, 2);
