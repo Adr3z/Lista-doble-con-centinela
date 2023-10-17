@@ -427,7 +427,7 @@ static void test_sort_reversed_data(void)
 
 static void test_sort_huge_amount_of_sorted_data(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE();
    size_t expected_size = 1000000;
    list_data_t expected[expected_size];
    for (size_t i = 0; i < expected_size; i++)   {
