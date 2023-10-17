@@ -59,7 +59,7 @@ static void test_empty_list(void)
 
 static void test_count_an_empty_list(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE();
    TEST_ASSERT_EQUAL(0, list_size(&list));
 }
 
