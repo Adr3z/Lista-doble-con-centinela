@@ -68,4 +68,7 @@ list_node_t *create_node(list_data_t item_data);
 //inserts node x after node y
 void insert_node( list_node_t *x, list_node_t *y);
 
+//search for a specific node in the list
+list_node_t *find_node(const list_t *list, list_data_t data);
+
 #endif

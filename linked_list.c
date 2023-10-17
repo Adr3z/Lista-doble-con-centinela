@@ -89,3 +89,24 @@ void list_pop_back(list_t *list)
         list->size--;
     }
 }
+
+void list_delete(list_t *list, list_data_t data)
+{
+    list_node_t *node_to_delete = find_node(list, data);
+    if (node_to_delete != NULL) {
+        remove_node(node_to_delete);
+        list->size--;
+    }
+}
+
+list_node_t *find_node(const list_t *list, list_data_t data)
+{
+    list_node_t *current = list->sentinel->next;
+    while (current != list->sentinel) {
+        if (current->data == data) {
+            return current; 
+        }
+        current = current->next;
+    }
+    return NULL; 
+}

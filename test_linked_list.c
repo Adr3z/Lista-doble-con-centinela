@@ -180,7 +180,7 @@ static void test_pop_front_to_empty_does_not_break_the_list(void)
 
 static void test_deletes_the_only_element(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE(); 14
    list_push_back(&list, 61);
    list_delete(&list, 61);
    TEST_ASSERT_EQUAL(0, list_size(&list));
