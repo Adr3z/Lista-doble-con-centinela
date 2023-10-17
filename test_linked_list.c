@@ -294,7 +294,7 @@ static void test_reverse_list_with_one_element(void)
 
 static void test_reverse_list_with_two_elements(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE(); 24
    list_data_t expected[] = {2, 1};
 
    list_push_back(&list, 1);
@@ -305,7 +305,7 @@ static void test_reverse_list_with_two_elements(void)
 
 static void test_reverse_some_data(void)
 {
-   TEST_IGNORE();
+   TEST_IGNORE(); 
    list_data_t expected[] = {9, 73, 107, 81};
 
    list_push_back(&list, 73);

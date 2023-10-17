@@ -135,29 +135,23 @@ void list_reverse(list_t *list)
 }*/
 
 //recursiva
-void reverse_recursive(list_node_t *current, list_t *list) 
+void reverse_range(list_t *list, list_node_t *left, list_node_t *right)
 {
-    if (current == list->sentinel) {
-        list->sentinel->next = list->sentinel->prev;
-        list->sentinel->prev = current;
-        return;
-    }
-
-    list_node_t *next = current->next;
-    current->next = current->prev;
-    current->prev = next;
-
-    reverse_recursive(next, list);
-}
-
-void list_reverse(list_t *list) 
-{
-    if (list_is_empty(list) || list->size == 1) {
+    if (left == right || left->prev == right) {
         return; 
     }
 
-    list->sentinel->prev = list->sentinel->next;
-    list->sentinel->next = list->sentinel;
+    list_data_t temp = left->data;
+    left->data = right->data;
+    right->data = temp;
 
-    reverse_recursive(list->sentinel->prev, list);
+    reverse_range(list, left->next, right->prev);
 }
+
+void list_reverse(list_t *list) {
+    if (list->size <= 1) {
+        return; 
+    }
+    reverse_range(list, list->sentinel->next, list->sentinel->prev);
+}
+

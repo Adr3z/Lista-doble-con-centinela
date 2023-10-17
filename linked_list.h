@@ -72,6 +72,6 @@ void insert_node( list_node_t *x, list_node_t *y);
 list_node_t *find_node(const list_t *list, list_data_t data);
 
 //aux function to reverse the list
-void reverse_recursive(list_node_t *current, list_t *list) ;
+void reverse_range(list_t *list, list_node_t *left, list_node_t *right);
 
 #endif
