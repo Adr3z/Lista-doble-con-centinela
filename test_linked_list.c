@@ -376,7 +376,7 @@ static void test_sort_some_data(void)
 
 static void test_sort_shuffled_data(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE();
    list_data_t expected[] = {2, 2, 4, 6, 8, 8, 12, 14, 16, 16, 18, 20, 20};
    size_t expected_size = sizeof(expected)/sizeof(expected[0]);
    list_data_t shuffled[expected_size];
