@@ -284,7 +284,7 @@ static void test_reverse_empty_list(void)
 
 static void test_reverse_list_with_one_element(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE(); 23
    list_data_t expected[] = {1};
 
    list_push_back(&list, 1);
