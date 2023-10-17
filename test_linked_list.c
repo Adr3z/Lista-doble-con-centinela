@@ -65,7 +65,7 @@ static void test_count_an_empty_list(void)
 
 static void test_push_front_and_get_first_element_from_the_list(void)
 {
-   TEST_IGNORE();   // delete this line to run test
+   //TEST_IGNORE();   // delete this line to run test
    list_push_front(&list, 7);
    TEST_ASSERT_EQUAL(7, list_front(&list));
 }

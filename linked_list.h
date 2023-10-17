@@ -59,7 +59,13 @@ void list_reverse(list_t *list);
 // sorts the elements in the list
 void list_sort(list_t *list);
 
-//remove a node of the list
+//removes a node from the list
 void remove_node(list_node_t *node);
+
+//creates a new node
+list_node_t *create_node(list_data_t item_data);
+
+//inserts node x after node y
+void insert_node( list_node_t *x, list_node_t *y);
 
 #endif
