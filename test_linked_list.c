@@ -277,7 +277,7 @@ static void test_deletes_only_the_first_occurrence(void)
 
 static void test_reverse_empty_list(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE(); 22
    list_reverse(&list);
    TEST_ASSERT_TRUE(list_is_empty(&list));
 }

@@ -110,3 +110,25 @@ list_node_t *find_node(const list_t *list, list_data_t data)
     }
     return NULL; 
 }
+
+void list_reverse(list_t *list)
+{
+    if (list_is_empty(list) || list->size == 1) {
+        return; 
+    }
+
+    list_node_t *current = list->sentinel->next;
+    list_node_t *prev = NULL;
+    list_node_t *next;
+
+    while (current != list->sentinel) {
+        next = current->next;
+        current->next = prev;
+        current->prev = next;
+        prev = current;
+        current = next;
+    }
+
+    list->sentinel->next = prev;
+    list->sentinel->prev = prev;
+}
