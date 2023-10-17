@@ -253,7 +253,7 @@ static void test_deletes_the_second_of_two_elements(void)
 static void
 test_delete_does_not_modify_the_list_if_the_element_is_not_found(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE(); 20
    list_push_back(&list, 89);
    list_delete(&list, 103);
    TEST_ASSERT_EQUAL(1, list_size(&list));
