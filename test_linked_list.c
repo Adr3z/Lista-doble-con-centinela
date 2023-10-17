@@ -89,7 +89,7 @@ static void test_add_remove_at_the_end_of_the_list(void)
 
 static void test_pop_front_gets_an_element_from_the_list(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE(); 6
    list_push_back(&list, 17);
    TEST_ASSERT_EQUAL(17, list_front(&list));
 }
