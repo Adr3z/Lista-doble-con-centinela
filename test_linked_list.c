@@ -168,7 +168,7 @@ static void test_pop_back_to_empty_does_not_break_the_list(void)
 
 static void test_pop_front_to_empty_does_not_break_the_list(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE(); 13
    list_push_back(&list, 41);
    list_push_back(&list, 59);
    list_pop_front(&list);
