@@ -116,7 +116,7 @@ static void test_push_front_adds_element_at_start_of_the_list(void)
 
 static void test_push_pop_front_back_can_be_used_in_any_order(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE(); 9
    list_push_back(&list, 1);
    list_push_back(&list, 2);
    TEST_ASSERT_EQUAL(2, list_back(&list));
