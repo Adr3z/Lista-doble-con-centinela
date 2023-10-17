@@ -232,7 +232,7 @@ test_deletes_the_element_with_the_specified_value_from_the_list_reassigns_head(
 
 static void test_deletes_the_first_of_two_elements(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE(); 18
    list_push_back(&list, 97);
    list_push_back(&list, 101);
    list_delete(&list, 97);
