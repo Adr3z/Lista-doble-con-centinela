@@ -111,6 +111,7 @@ list_node_t *find_node(const list_t *list, list_data_t data)
     return NULL; 
 }
 
+/*iterativa
 void list_reverse(list_t *list)
 {
     if (list_is_empty(list) || list->size == 1) {
@@ -131,4 +132,32 @@ void list_reverse(list_t *list)
 
     list->sentinel->next = prev;
     list->sentinel->prev = prev;
+}*/
+
+//recursiva
+void reverse_recursive(list_node_t *current, list_t *list) 
+{
+    if (current == list->sentinel) {
+        list->sentinel->next = list->sentinel->prev;
+        list->sentinel->prev = current;
+        return;
+    }
+
+    list_node_t *next = current->next;
+    current->next = current->prev;
+    current->prev = next;
+
+    reverse_recursive(next, list);
+}
+
+void list_reverse(list_t *list) 
+{
+    if (list_is_empty(list) || list->size == 1) {
+        return; 
+    }
+
+    list->sentinel->prev = list->sentinel->next;
+    list->sentinel->next = list->sentinel;
+
+    reverse_recursive(list->sentinel->prev, list);
 }
