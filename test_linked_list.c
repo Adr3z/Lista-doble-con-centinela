@@ -318,7 +318,7 @@ static void test_reverse_some_data(void)
 
 static void test_reverse_huge_amount_of_data(void)
 {
-   TEST_IGNORE(); 
+   //TEST_IGNORE(); 
    size_t expected_size = 1000000;
    list_data_t expected[expected_size];
 

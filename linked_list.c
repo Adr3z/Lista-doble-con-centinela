@@ -111,28 +111,28 @@ list_node_t *find_node(const list_t *list, list_data_t data)
     return NULL; 
 }
 
-/*iterativa
+//iterativa
 void list_reverse(list_t *list) {
     if (list->size <= 1) {
-        return;
+        return; 
     }
 
-    list_node_t *current = list->sentinel->next;
-    list_node_t *new_next = NULL;
+    list_node_t *left = list->sentinel->next;
+    list_node_t *right = list->sentinel->prev;
 
-    while (current != list->sentinel) {
-        new_next = current->prev;
-        current->prev = current->next;
-        current->next = new_next;
-        current = current->prev;
+    while (left != right && left->prev != right) {
+        list_data_t temp = left->data;
+        left->data = right->data;
+        right->data = temp;
+
+        left = left->next;
+        right = right->prev;
     }
-
-    list->sentinel->prev = list->sentinel->next;
-    list->sentinel->next = new_next;
 }
-*/
 
-//recursiva
+
+
+/*recursiva
 void reverse_range(list_t *list, list_node_t *left, list_node_t *right) 
 {
     if (left == right || left->prev == right) {
@@ -152,7 +152,7 @@ void list_reverse(list_t *list)
     }
 
     reverse_range(list, list->sentinel->next, list->sentinel->prev);
-}
+}*/
 
 void list_sort(list_t *list) 
 {
