@@ -439,6 +439,60 @@ static void test_sort_huge_amount_of_sorted_data(void)
    check_contents(expected, expected_size, &list);
 }
 
+static void test_all_list_functions(void)
+{
+    // Lista vacía
+    TEST_ASSERT_TRUE(list_is_empty(&list));
+    TEST_ASSERT_EQUAL_size_t(0, list_size(&list));
+
+    // Insertar elementos al frente de la lista
+    list_push_front(&list, 1);
+    list_push_front(&list, 2);
+    list_push_front(&list, 3);
+    list_push_front(&list, 4);
+    TEST_ASSERT_FALSE(list_is_empty(&list));
+    TEST_ASSERT_EQUAL_size_t(4, list_size(&list));
+
+    // Verificar el orden de los elementos en la lista
+    list_data_t expected_data[] = {4, 3, 2, 1};
+    check_contents(expected_data, sizeof(expected_data) / sizeof(expected_data[0]), &list);
+
+    // Eliminar elementos del frente de la lista
+    list_pop_front(&list);
+    TEST_ASSERT_EQUAL_size_t(3, list_size(&list));
+
+    // Insertar elementos al final de la lista
+    list_push_back(&list, 5);
+    list_push_back(&list, 6);
+    TEST_ASSERT_EQUAL_size_t(5, list_size(&list));
+
+    // Verificar el orden de los elementos en la lista
+    list_data_t expected_data_after_push_back[] = {3, 2, 1, 5, 6};
+    check_contents(expected_data_after_push_back, sizeof(expected_data_after_push_back) / sizeof(expected_data_after_push_back[0]), &list);
+
+    // Eliminar elementos del final de la lista
+    list_pop_back(&list);
+    TEST_ASSERT_EQUAL_size_t(4, list_size(&list));
+
+    // Eliminar un elemento específico de la lista
+    list_delete(&list, 3);
+    TEST_ASSERT_EQUAL_size_t(3, list_size(&list));
+
+    // Invertir el orden de los elementos en la lista
+    list_reverse(&list);
+
+    // Verificar el orden de los elementos después de invertir
+    list_data_t expected_data_after_reverse[] = {5, 1, 2};
+    check_contents(expected_data_after_reverse, sizeof(expected_data_after_reverse) / sizeof(expected_data_after_reverse[0]), &list);
+
+    // Ordenar los elementos en la lista
+    list_sort(&list);
+
+    // Verificar que los elementos estén en orden ascendente
+    list_data_t expected_data_after_sort[] = {1, 2, 5};
+    check_contents(expected_data_after_sort, sizeof(expected_data_after_sort) / sizeof(expected_data_after_sort[0]), &list);
+}
+
 int main(void)
 {
    UnityBegin("test_linked_list.c");
@@ -479,6 +533,7 @@ int main(void)
    RUN_TEST(test_sort_random_order);
    RUN_TEST(test_sort_reversed_data);
    RUN_TEST(test_sort_huge_amount_of_sorted_data);
+   RUN_TEST(test_all_list_functions);
 
    return UnityEnd();
 }
