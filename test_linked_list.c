@@ -72,7 +72,7 @@ static void test_push_front_and_get_first_element_from_the_list(void)
 
 static void test_push_back_and_get_last_element_from_the_list(void)
 {
-   TEST_IGNORE();   // delete this line to run test
+   //TEST_IGNORE();   // delete this line to run test
    list_push_back(&list, 7);
    TEST_ASSERT_EQUAL(7, list_back(&list));
 }

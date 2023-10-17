@@ -68,3 +68,15 @@ list_data_t list_front(const list_t *list)
 {
     return list->sentinel->next->data;
 }
+
+void list_push_back(list_t *list, list_data_t item_data)
+{
+    list_node_t *new = create_node(item_data);
+    insert_node(new, list->sentinel->prev);
+    list->size++;
+}
+
+list_data_t list_back(const list_t *list)
+{
+    return list->sentinel->prev->data;
+}
