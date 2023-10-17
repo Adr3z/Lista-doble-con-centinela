@@ -143,7 +143,7 @@ static void test_count_a_list_with_items(void)
 
 static void test_count_is_correct_after_mutation(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE(); 11
    list_push_back(&list, 31);
    TEST_ASSERT_EQUAL(1, list_size(&list));
    list_push_front(&list, 43);
