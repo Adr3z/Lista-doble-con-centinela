@@ -80,3 +80,12 @@ list_data_t list_back(const list_t *list)
 {
     return list->sentinel->prev->data;
 }
+
+void list_pop_back(list_t *list)
+{
+    if(!list_is_empty(list)){
+        list_node_t *node = list->sentinel->prev;
+        remove_node(node);
+        list->size--;
+    }
+}

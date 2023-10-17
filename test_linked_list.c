@@ -79,7 +79,7 @@ static void test_push_back_and_get_last_element_from_the_list(void)
 
 static void test_add_remove_at_the_end_of_the_list(void)
 {
-   TEST_IGNORE();   // delete this line to run test
+   //TEST_IGNORE();   // delete this line to run test
    list_push_back(&list, 11);
    list_push_back(&list, 13);
    TEST_ASSERT_EQUAL(13, list_back(&list));
