@@ -361,7 +361,7 @@ static void test_sort_list_with_two_elements(void)
 
 static void test_sort_some_data(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE();30
    list_data_t expected[] = {1, 2, 3, 4, 5, 6};
 
    list_push_back(&list, 5);
