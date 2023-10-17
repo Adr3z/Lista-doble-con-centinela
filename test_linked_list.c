@@ -96,7 +96,7 @@ static void test_pop_front_gets_an_element_from_the_list(void)
 
 static void test_pop_front_gets_first_element_from_the_list(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE(); 7
    list_push_back(&list, 23);
    list_push_back(&list, 5);
    TEST_ASSERT_EQUAL(23, list_front(&list));
