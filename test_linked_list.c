@@ -261,7 +261,7 @@ test_delete_does_not_modify_the_list_if_the_element_is_not_found(void)
 
 static void test_deletes_only_the_first_occurrence(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE(); 21
    list_push_back(&list, 73);
    list_push_back(&list, 9);
    list_push_back(&list, 9);
