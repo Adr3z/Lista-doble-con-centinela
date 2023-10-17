@@ -219,7 +219,7 @@ static void
 test_deletes_the_element_with_the_specified_value_from_the_list_reassigns_head(
     void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE(); 17
    list_push_back(&list, 71);
    list_push_back(&list, 83);
    list_push_back(&list, 79);
