@@ -242,7 +242,7 @@ static void test_deletes_the_first_of_two_elements(void)
 
 static void test_deletes_the_second_of_two_elements(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE(); 19
    list_push_back(&list, 97);
    list_push_back(&list, 101);
    list_delete(&list, 101);
