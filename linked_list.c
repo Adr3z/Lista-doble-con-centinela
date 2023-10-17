@@ -112,30 +112,28 @@ list_node_t *find_node(const list_t *list, list_data_t data)
 }
 
 /*iterativa
-void list_reverse(list_t *list)
-{
-    if (list_is_empty(list) || list->size == 1) {
-        return; 
+void list_reverse(list_t *list) {
+    if (list->size <= 1) {
+        return;
     }
 
     list_node_t *current = list->sentinel->next;
-    list_node_t *prev = NULL;
-    list_node_t *next;
+    list_node_t *new_next = NULL;
 
     while (current != list->sentinel) {
-        next = current->next;
-        current->next = prev;
-        current->prev = next;
-        prev = current;
-        current = next;
+        new_next = current->prev;
+        current->prev = current->next;
+        current->next = new_next;
+        current = current->prev;
     }
 
-    list->sentinel->next = prev;
-    list->sentinel->prev = prev;
-}*/
+    list->sentinel->prev = list->sentinel->next;
+    list->sentinel->next = new_next;
+}
+*/
 
 //recursiva
-void reverse_range(list_t *list, list_node_t *left, list_node_t *right)
+void reverse_range(list_t *list, list_node_t *left, list_node_t *right) 
 {
     if (left == right || left->prev == right) {
         return; 
@@ -144,14 +142,36 @@ void reverse_range(list_t *list, list_node_t *left, list_node_t *right)
     list_data_t temp = left->data;
     left->data = right->data;
     right->data = temp;
-
     reverse_range(list, left->next, right->prev);
 }
 
-void list_reverse(list_t *list) {
+void list_reverse(list_t *list) 
+{
     if (list->size <= 1) {
         return; 
     }
+
     reverse_range(list, list->sentinel->next, list->sentinel->prev);
 }
 
+void list_sort(list_t *list) 
+{
+    if (list_is_empty(list) || list->size == 1) {
+        return; 
+    }
+
+    list_node_t *current = list->sentinel->next->next;
+    
+    while (current != list->sentinel) {
+        list_data_t key = current->data;
+        list_node_t *prev = current->prev;
+
+        while (prev != list->sentinel && prev->data > key) {
+            prev->next->data = prev->data;
+            prev = prev->prev;
+        }
+
+        prev->next->data = key;
+        current = current->next;
+    }
+}

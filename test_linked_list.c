@@ -305,7 +305,7 @@ static void test_reverse_list_with_two_elements(void)
 
 static void test_reverse_some_data(void)
 {
-   //TEST_IGNORE(); 
+   //TEST_IGNORE(); 25
    list_data_t expected[] = {9, 73, 107, 81};
 
    list_push_back(&list, 73);
@@ -318,7 +318,7 @@ static void test_reverse_some_data(void)
 
 static void test_reverse_huge_amount_of_data(void)
 {
-   TEST_IGNORE();
+   TEST_IGNORE(); 
    size_t expected_size = 1000000;
    list_data_t expected[expected_size];
 
@@ -333,7 +333,7 @@ static void test_reverse_huge_amount_of_data(void)
 
 static void test_sort_empty_list(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE();27
    list_sort(&list);
    TEST_ASSERT_TRUE(list_is_empty(&list));
 }
