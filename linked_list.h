@@ -2,7 +2,8 @@
 #define LINKED_LIST_H
 
 #include <stddef.h>
-#include <stdbool.h>
+#include <stdbool.h> 
+#include <stdlib.h>
 
 typedef int list_data_t;
 typedef struct list_node list_node_t;
@@ -57,5 +58,8 @@ void list_reverse(list_t *list);
 
 // sorts the elements in the list
 void list_sort(list_t *list);
+
+//remove a node of the list
+void remove_node(list_node_t *node);
 
 #endif

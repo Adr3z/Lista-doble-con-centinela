@@ -53,7 +53,7 @@ static void shuffle(list_data_t array[], size_t length)
 
 static void test_empty_list(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE();
    TEST_ASSERT_TRUE(list_is_empty(&list));
 }
 
