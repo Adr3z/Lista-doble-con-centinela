@@ -106,7 +106,7 @@ static void test_pop_front_gets_first_element_from_the_list(void)
 
 static void test_push_front_adds_element_at_start_of_the_list(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE(); 8
    list_push_front(&list, 23);
    list_push_front(&list, 5);
    TEST_ASSERT_EQUAL(5, list_front(&list));
