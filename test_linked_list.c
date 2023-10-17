@@ -135,7 +135,7 @@ static void test_push_pop_front_back_can_be_used_in_any_order(void)
 
 static void test_count_a_list_with_items(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE(); 10
    list_push_back(&list, 37);
    list_push_back(&list, 1);
    TEST_ASSERT_EQUAL(2, list_size(&list));
